@@ -13,6 +13,7 @@ Jobs
 
 
         @endforeach
+        <div class="pb-20">{{$jobs->links()}}</div>
     </div>
 
 </x-layout>

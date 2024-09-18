@@ -18,7 +18,10 @@ Route::get('/jobs/create', function () {
     return view('jobs.create');
 });
 Route::Post('/jobs/', function () {
-   //  request()
+    request()->validate([
+        'title' =>['required','max:3'],
+       'salary' =>['required']
+    ]);
    Job::create([
     'title'=>'Frontend',
     'employer_id'=>1,

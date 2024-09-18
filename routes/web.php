@@ -21,6 +21,10 @@ Route::get('/jobs/create', function () {
 //Stores
 Route::Post('/jobs/', function () {
     request()->validate([
+        'title' =>['required','max:3'],
+       'salary' =>['required']
+    ]);
+    request()->validate([
         'title' =>['required','min:3'],
        'salary' =>['required']
     ]);
